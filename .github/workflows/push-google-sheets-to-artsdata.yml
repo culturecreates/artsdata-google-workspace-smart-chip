@@ -66,10 +66,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: events
-          path: ./${{needs.download-and-transform-data.outputs.output-file-path}}
+          path: ./events
 
       - name: Copy file
-        run: cp /home/runner/work/artsdata-google-workspace-smart-chip/artsdata-google-workspace-smart-chip/${{needs.download-and-transform-data.outputs.output-file-path}} ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
+        run: cp /home/runner/work/artsdata-google-workspace-smart-chip/artsdata-google-workspace-smart-chip/events/${{needs.download-and-transform-data.outputs.output-file-path}} ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
 
       - name: Commit file to GitHub
         run: |
