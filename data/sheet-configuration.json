@@ -1,0 +1,320 @@
+{
+  "importOptions": [
+    {
+      "encoding": "",
+      "separator": ",",
+      "ignoreLines": -1,
+      "headerLines": 1,
+      "skipDataLines": 0,
+      "limit": -1,
+      "storeBlankRows": true,
+      "guessCellValueTypes": false,
+      "processQuotes": true,
+      "quoteCharacter": "\"",
+      "storeBlankCellsAsNulls": true,
+      "includeFileSources": false,
+      "includeArchiveFileName": false,
+      "trimStrings": false,
+      "disableAutoPreview": false,
+      "projectName": "my sheet csv",
+      "projectTags": [],
+      "fileSource": "my_sheet.csv",
+      "archiveFileName": null
+    }
+  ],
+  "operations": [
+    {
+      "op": "mapping-editor/save-rdf-mapping",
+      "mapping": {
+        "baseIRI": "http://example.com/base/",
+        "namespaces": {
+          "schema": "http://schema.org/",
+          "sheet": "http://g-sheet-artsdata/event/",
+          "sheet_concept": "https:/g-sheet-artsdata/concept/",
+          "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "subjectMappings": [
+          {
+            "subject": {
+              "valueSource": {
+                "source": "column",
+                "columnName": "Artsdata ID"
+              },
+              "transformation": {
+                "language": "prefix",
+                "expression": "sheet"
+              }
+            },
+            "typeMappings": [
+              {
+                "valueSource": {
+                  "source": "constant",
+                  "constant": "Event"
+                },
+                "transformation": {
+                  "language": "prefix",
+                  "expression": "schema"
+                }
+              }
+            ],
+            "propertyMappings": [
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "name"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Title"
+                    },
+                    "valueType": {
+                      "type": "language_literal",
+                      "language": {
+                        "valueSource": {
+                          "source": "constant",
+                          "constant": "fr"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "additionalType"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Event Type"
+                    },
+                    "transformation": {
+                      "language": "raw"
+                    },
+                    "valueType": {
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "startDate"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "row_index"
+                    },
+                    "transformation": {
+                      "language": "grel",
+                      "expression": "cells[\"StartDate\"].value + \"T\" + cells[\"StartTime\"].value + \"Z\""
+                    },
+                    "valueType": {
+                      "type": "datatype_literal",
+                      "datatype": {
+                        "valueSource": {
+                          "source": "constant",
+                          "constant": "dateTime"
+                        },
+                        "transformation": {
+                          "language": "prefix",
+                          "expression": "xsd"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "url"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Main Webpage URL"
+                    },
+                    "valueType": {
+                      "type": "literal"
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "description"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Description"
+                    },
+                    "valueType": {
+                      "type": "language_literal",
+                      "language": {
+                        "valueSource": {
+                          "source": "constant",
+                          "constant": "fr"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "location"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Location"
+                    },
+                    "transformation": {
+                      "language": "raw"
+                    },
+                    "valueType": {
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "organizer"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Organizer"
+                    },
+                    "transformation": {
+                      "language": "raw"
+                    },
+                    "valueType": {
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "performer"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Performer"
+                    },
+                    "transformation": {
+                      "language": "raw"
+                    },
+                    "valueType": {
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "image"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Image URL"
+                    },
+                    "valueType": {
+                      "type": "literal"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "description": "Save RDF Mapping"
+    }
+  ]
+}
