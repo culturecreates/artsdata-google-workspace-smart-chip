@@ -69,7 +69,7 @@ jobs:
           path: ./events
 
       - name: Copy file
-        run: mkdir -p ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}} cp /home/runner/work/artsdata-google-workspace-smart-chip/artsdata-google-workspace-smart-chip/events/${{needs.download-and-transform-data.outputs.output-file-path}} ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
+        run: mkdir -p ./outputs cp /home/runner/work/artsdata-google-workspace-smart-chip/artsdata-google-workspace-smart-chip/events/${{needs.download-and-transform-data.outputs.output-file-path}} ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
 
       - name: Commit file to GitHub
         run: |
