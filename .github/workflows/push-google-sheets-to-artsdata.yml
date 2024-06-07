@@ -1,0 +1,101 @@
+name: Import Google Sheets to Artsdata
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  download-and-transform-data:
+    runs-on: ubuntu-latest
+    outputs:
+        output-file-path: ${{ steps.step-5.outputs.events_file_name }}
+    container:
+        image: ontotext/refine:1.2.1
+        options: --user root
+        ports:
+          - 7333:7333
+    steps:
+      - name: Install requirements
+        id: step-1
+        run: apk update && apk add curl && apk add util-linux
+
+      - name: Run Onto Refine server
+        id: step-2
+        run: /opt/ontorefine/dist/bin/ontorefine &
+
+      - name: Download data from Google Sheet
+        id: step-3
+        run: |
+            curl -L 'https://docs.google.com/spreadsheets/d/1fPcWbdSL-gcLmeGWVCID9TjBq5fGk4vG4HG2E7kSAb0/export?exportFormat=csv' -o events.csv
+
+
+      - name: Download configuration files for transformation
+        id: step-4
+        run: |
+            curl 'https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/data/sheet-configuration.json' >> event-transform-config.json
+    
+      - name: Set output file name
+        id: step-5
+        run: |
+            echo "events_file_name=events-$(uuidgen).ttl" >> $GITHUB_OUTPUT
+
+      - name: Transform events in CSV  to RDF
+        id: step-6
+        run: |
+            /opt/ontorefine/dist/bin/ontorefine-cli \
+            transform events.csv \
+            -u http://localhost:7333 \
+            --configurations event-transform-config.json \
+            -f csv >> ${{steps.step-5.outputs.events_file_name}}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: events
+            path: ./${{steps.step-5.outputs.events_file_name}}
+            retention-days: 1
+
+  commit-to-github:
+    runs-on: ubuntu-latest
+    needs: download-and-transform-data
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download artifacts
+        id: download-step
+        uses: actions/download-artifact@v2
+        with:
+          name: events
+          path: ./${{needs.download-and-transform-data.outputs.output-file-path}}
+
+      - name: Copy file
+        run: cp /home/runner/work/artsdata-google-workspace-smart-chip/artsdata-google-workspace-smart-chip/${{needs.download-and-transform-data.outputs.output-file-path}} ./outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
+
+      - name: Commit file to GitHub
+        run: |
+            git pull
+            git config --global user.email "actions@github.com"
+            git config --global user.name "GitHub Actions"
+            git add "outputs/${{needs.download-and-transform-data.outputs.output-file-path}}"
+            git commit -m "Push Event TTL file"
+            git push
+
+  artsdata-push:
+    runs-on: ubuntu-latest
+    needs: [commit-to-github, download-and-transform-data]
+    steps:
+      - name: Action setup
+        uses: culturecreates/artsdata-pipeline-action@v1.1.0
+        with:
+          artifact: google-smart-chip
+          publisher: "${{ secrets.PUBLISHER_URI_GREGORY }}"
+          downloadUrl: https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
+
+
+
+
+
+
+
+
+            
