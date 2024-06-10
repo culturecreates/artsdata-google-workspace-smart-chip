@@ -31,7 +31,7 @@ jobs:
       - name: Download configuration files for transformation
         id: step-4
         run: |
-            curl 'https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/data/sheet-configuration.json' >> event-transform-config.json
+            curl 'https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/ontorefine/sheet-configuration.json' >> event-transform-config.json
     
       - name: Set output file name
         id: step-5
