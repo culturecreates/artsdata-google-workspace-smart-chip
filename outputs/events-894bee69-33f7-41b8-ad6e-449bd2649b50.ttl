@@ -1,0 +1,24 @@
+@base <http://example.com/base/> .
+@prefix schema: <http://schema.org/> .
+@prefix sheet: <http://g-sheet-artsdata/event/> .
+@prefix sheet_concept: <https:/g-sheet-artsdata/concept/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sheet:K23-660 a schema:Event;
+  schema:name """
+Mehdi Cayenne """@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/CircusPerformance>;
+  schema:startDate "2025-05-06T20:00:00Z"^^xsd:dateTime;
+  schema:url "https://www.facebook.com/events/208559745363589";
+  schema:description "Mehdi Cayenne, a veritable beast of the stage in the international French-speaking world, is back in force with an electrifying new show, featuring a more electro-pop sound tinged with hip-hop that leaves plenty of room for his legendary energy."@fr;
+  schema:location <http://kg.artsdata.ca/resource/K16-294>;
+  schema:organizer <http://kg.artsdata.ca/resource/K5-32>;
+  schema:performer <http://kg.artsdata.ca/resource/K5-388> .
+
+sheet:123 a schema:Event;
+  schema:name """
+Event 2"""@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/CircusPerformance>;
+  schema:startDate "2025-05-07T21:00:00Z"^^xsd:dateTime;
+  schema:url "https://www.facebook.com/events/208559745363590";
+  schema:location <http://kg.artsdata.ca/resource/K16-294> .
