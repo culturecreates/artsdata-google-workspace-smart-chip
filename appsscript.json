@@ -9,6 +9,9 @@
     "https://www.googleapis.com/auth/script.external_request",
     "https://www.googleapis.com/auth/workspace.linkcreate"
   ],
+  "urlFetchWhitelist": [
+    "https://kg.artsdata.ca/"
+  ],
   "addOns":{
     "common": {
       "name": "Artsdata Preview Add-on",
