@@ -1,20 +1,25 @@
 import getEntityDetails from './get_entity_details';
+import createPersonOrganizationCard from './create_person_organization_card';
+import createLocationCard from './create_location_card';
+import createConceptCard from './create_concept_card';
+import createErrorCard from './create_error_card';
 
 const artsdataPreview = event => {
   const url = event?.sheets?.matchedUrl?.url;
   if (url) {
     const entityData = getEntityDetails(url);
-    let entityName = entityData?.name?.fr || entityData?.name?.en || '';
-    const entityType = entityData?.type;
     if (entityData?.type?.includes('skos:Concept')) {
-      entityName = entityData?.['skos:prefLabel']?.fr || entityData?.['skos:prefLabel']?.en;
+      return createConceptCard(entityData);
     }
-    const previewHeader = CardService.newCardHeader()
-      .setTitle(entityName)
-      .setSubtitle(entityType);
-    return CardService.newCardBuilder()
-      .setHeader(previewHeader)
-      .build();
+    switch (entityData?.type) {
+      case 'Organization':
+      case 'Person':
+        return createPersonOrganizationCard(entityData);
+      case 'Place':
+        return createLocationCard(entityData);
+      default:
+        return createErrorCard();
+    }
   }
   return null;
 };
