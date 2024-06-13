@@ -1,7 +1,7 @@
 import getMultilingualFields from './get_multilingual_fields';
 
 const createConceptCard = entityData => {
-  const entityName = getMultilingualFields(entityData?.name);
+  const entityName = getMultilingualFields(entityData?.['skos:prefLabel']);
   const url = entityData?.type?.filter(type =>
     type.startsWith('http://kg.artsdata.ca/ontology')
   )?.[0];

@@ -2,12 +2,18 @@
   "timeZone": "Asia/Kolkata",
   "dependencies": {
   },
+  "webapp": {
+    "executeAs": "USER_ACCESSING",
+    "access": "ANYONE"
+  },
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "oauthScopes":[
     "https://www.googleapis.com/auth/workspace.linkpreview",
     "https://www.googleapis.com/auth/script.external_request",
-    "https://www.googleapis.com/auth/workspace.linkcreate"
+    "https://www.googleapis.com/auth/workspace.linkcreate",
+    "https://www.googleapis.com/auth/script.container.ui",
+    "https://www.googleapis.com/auth/spreadsheets.currentonly"
   ],
   "urlFetchWhitelist": [
     "https://kg.artsdata.ca/"
@@ -15,7 +21,7 @@
   "addOns":{
     "common": {
       "name": "Artsdata Preview Add-on",
-      "logoUrl": "https://kg.artsdata.ca/assets/artsdata_logo_circle-b81a55f1319c2ac8759c437d5fc4aaebc259f5f7bd81d9c70fbd74d4f43bef60.png"
+      "logoUrl": "https://kg.artsdata.ca/favicon.ico"
     },
     "docs": {
       "linkPreviewTriggers":[

@@ -8,6 +8,9 @@ const artsdataPreview = event => {
   const url = event?.sheets?.matchedUrl?.url;
   if (url) {
     const entityData = getEntityDetails(url);
+    if (entityData?.error) {
+      return createErrorCard(entityData?.error);
+    }
     if (entityData?.type?.includes('skos:Concept')) {
       return createConceptCard(entityData);
     }
@@ -18,7 +21,7 @@ const artsdataPreview = event => {
       case 'Place':
         return createLocationCard(entityData);
       default:
-        return createErrorCard();
+        return createErrorCard('This type of entity is not supported.');
     }
   }
   return null;

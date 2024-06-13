@@ -1,7 +1,7 @@
-const createErrorCard = () => {
+const createErrorCard = message => {
   const previewHeader = CardService.newCardHeader()
     .setTitle('Error')
-    .setSubtitle('Entity Type is not Compatible');
+    .setSubtitle(message);
 
   return CardService.newCardBuilder()
     .setHeader(previewHeader)

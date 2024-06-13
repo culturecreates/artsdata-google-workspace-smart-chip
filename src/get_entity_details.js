@@ -7,8 +7,16 @@ const getEntityDetails = url => {
     method: 'get',
     headers
   };
-  const response = UrlFetchApp.fetch(url, options);
-  return JSON.parse(response);
+
+  try {
+    const response = UrlFetchApp.fetch(url, options);
+    return JSON.parse(response);
+  } catch (error) {
+    if (error.name === 'Exception') {
+      return { error: 'The URL is invalid.(Try using https if the URL is in http)' };
+    }
+    return { error: error.message };
+  }
 };
 
 export default getEntityDetails;
