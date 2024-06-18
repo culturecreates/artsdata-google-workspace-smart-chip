@@ -1,10 +1,8 @@
 const onOpen = () => {
   SpreadsheetApp.getUi()
-    .createMenu('Custom Menu')
-    .addItem('First Item', 'menuItem')
+    .createMenu('Artsdata Reconciliation')
+    .addItem('Search', 'artsdataSearch')
     .addToUi();
-
-    
 };
 
 export default onOpen;
