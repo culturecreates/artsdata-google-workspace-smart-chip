@@ -12,7 +12,7 @@
       "processQuotes": true,
       "quoteCharacter": "\"",
       "storeBlankCellsAsNulls": true,
-      "includeFileSources": false,
+      "includeFileSources": true,
       "includeArchiveFileName": false,
       "trimStrings": false,
       "disableAutoPreview": false,
