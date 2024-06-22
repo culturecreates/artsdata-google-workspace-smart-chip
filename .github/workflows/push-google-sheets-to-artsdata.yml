@@ -9,7 +9,7 @@ jobs:
     outputs:
         output-file-path: ${{ steps.step-5.outputs.events_file_name }}
     container:
-        image: ontotext/refine:1.2.1
+        image: ontotext/refine:1.2.0
         options: --user root
         ports:
           - 7333:7333
