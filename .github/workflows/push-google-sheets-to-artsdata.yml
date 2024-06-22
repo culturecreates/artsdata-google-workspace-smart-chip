@@ -38,6 +38,11 @@ jobs:
         run: |
             echo "events_file_name=events-$(uuidgen).ttl" >> $GITHUB_OUTPUT
 
+      - name: List files
+        id: step-6-info
+        run: |
+            ls -la
+
       - name: Transform events in CSV  to RDF
         id: step-6
         run: |
