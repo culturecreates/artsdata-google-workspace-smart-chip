@@ -1,7 +1,7 @@
 services:
   onto_refine:
-    container_name: onto_refine
-    image: ontotext/refine:1.2.0
+    container_name: onto_refine_1.2.1
+    image: ontotext/refine:1.2.1
     ports:
       - '7333:7333'
     volumes:

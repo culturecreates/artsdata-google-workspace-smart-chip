@@ -13,7 +13,7 @@ echo "Server started!"
 # Send a command to the running container
 # https://platform.ontotext.com/ontorefine/ontorefine-cli.html#transform
 echo "Running OntoRefine CLI..."
-docker exec onto_refine /opt/ontorefine/dist/bin/ontorefine-cli transform ../data/ontorefine/my_sheet.csv \
+docker exec onto_refine_1.2.1 /opt/ontorefine/dist/bin/ontorefine-cli transform ../data/ontorefine/my_sheet.csv \
   -u http://localhost:7333  \
   --no-clean \
   --configurations ../data/ontorefine/sheet-configuration.json  \

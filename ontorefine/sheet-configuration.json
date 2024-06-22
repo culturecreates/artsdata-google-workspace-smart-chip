@@ -16,7 +16,7 @@
       "includeArchiveFileName": false,
       "trimStrings": false,
       "disableAutoPreview": false,
-      "projectName": "my sheet csv",
+      "projectName": "cli-transform-my_sheet.csv-2024-06-22",
       "projectTags": [],
       "fileSource": "my_sheet.csv",
       "archiveFileName": null
@@ -30,15 +30,13 @@
         "namespaces": {
           "schema": "http://schema.org/",
           "sheet": "http://g-sheet-artsdata/event/",
-          "sheet_concept": "https:/g-sheet-artsdata/concept/",
           "xsd": "http://www.w3.org/2001/XMLSchema#"
         },
         "subjectMappings": [
           {
             "subject": {
               "valueSource": {
-                "source": "column",
-                "columnName": "Artsdata ID"
+                "source": "row_index"
               },
               "transformation": {
                 "language": "prefix",
@@ -133,7 +131,7 @@
                     },
                     "transformation": {
                       "language": "grel",
-                      "expression": "cells[\"StartDate\"].value + \"T\" + cells[\"StartTime\"].value + \"Z\""
+                      "expression": "cells[\"StartDate\"].value + \"T\" + cells[\"StartTime\"].value + \"-04:00\""
                     },
                     "valueType": {
                       "type": "datatype_literal",
