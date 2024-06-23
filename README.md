@@ -5,3 +5,6 @@ To run locally check the Docker daemon is running and type ./run_ontorefine.sh. 
 
 URL to demo Google sheet:
 https://docs.google.com/spreadsheets/d/1fPcWbdSL-gcLmeGWVCID9TjBq5fGk4vG4HG2E7kSAb0
+
+To reload this sheet use Nebula and view the artifact here:
+https://kg.artsdata.ca/entity?uri=http%3A%2F%2Fkg.artsdata.ca%2Fdatabus%2Fculture-creates%2Fgoogle-sheet%2Ftest-events
