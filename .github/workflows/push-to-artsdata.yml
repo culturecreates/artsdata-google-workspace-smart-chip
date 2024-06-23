@@ -1,4 +1,4 @@
-name: Import Google Sheets to Artsdata
+name: Import Google Sheet to Artsdata
 
 on:
   workflow_dispatch:
