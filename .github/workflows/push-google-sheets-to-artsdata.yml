@@ -94,7 +94,8 @@ jobs:
       - name: Action setup
         uses: culturecreates/artsdata-pipeline-action@v1.1.0
         with:
-          artifact: google-smart-chip
+          artifact: test-events
+          group: google-sheet
           publisher: "${{ secrets.PUBLISHER_URI_GREGORY }}"
           downloadUrl: https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
 
