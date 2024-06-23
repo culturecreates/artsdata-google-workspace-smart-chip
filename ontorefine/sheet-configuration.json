@@ -12,11 +12,11 @@
       "processQuotes": true,
       "quoteCharacter": "\"",
       "storeBlankCellsAsNulls": true,
-      "includeFileSources": true,
+      "includeFileSources": false,
       "includeArchiveFileName": false,
       "trimStrings": false,
       "disableAutoPreview": false,
-      "projectName": "cli-transform-my_sheet.csv-2024-06-22",
+      "projectName": "cli-transform-my_sheet.csv-2024-06-23",
       "projectTags": [],
       "fileSource": "my_sheet.csv",
       "archiveFileName": null
@@ -100,7 +100,7 @@
                   {
                     "valueSource": {
                       "source": "column",
-                      "columnName": "Event Type"
+                      "columnName": "EventType"
                     },
                     "transformation": {
                       "language": "raw"
@@ -164,7 +164,7 @@
                   {
                     "valueSource": {
                       "source": "column",
-                      "columnName": "Main Webpage URL"
+                      "columnName": "Url"
                     },
                     "valueType": {
                       "type": "literal"
@@ -300,7 +300,7 @@
                   {
                     "valueSource": {
                       "source": "column",
-                      "columnName": "Image URL"
+                      "columnName": "Url"
                     },
                     "valueType": {
                       "type": "literal"
