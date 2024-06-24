@@ -10,9 +10,11 @@ const createPersonOrganizationCard = entityData => {
     .setTitle(entityName)
     .setSubtitle(entityType);
 
+  if (entityImage && entityImage != '') {
   const previewImage = CardService.newImage()
     .setAltText('Image of entity')
     .setImageUrl(entityImage);
+  }
 
   const cardContent = CardService.newCardSection()
     .addWidget(CardService.newTextParagraph().setText(disambiguatingDescription))

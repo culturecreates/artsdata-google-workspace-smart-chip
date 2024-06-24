@@ -14,7 +14,7 @@ const getEntityDetails = url => {
     return JSON.parse(response);
   } catch (error) {
     if (error.name === 'Exception') {
-      return { error: 'The URL is invalid.(Try using https if the URL is in http)' };
+      return { error: 'The URL is invalid.' };
     }
     return { error: error.message };
   }
