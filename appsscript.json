@@ -30,7 +30,7 @@
           "runFunction": "artsdataPreview",
           "patterns": [
             {
-              "hostPattern":"*artsdata*"
+              "hostPattern":"*kg.artsdata.ca/resource*"
             }
           ],
           "labelText":"Artsdata-entity"
@@ -43,7 +43,7 @@
           "runFunction": "artsdataPreview",
           "patterns": [
             {
-              "hostPattern":"*artsdata*"
+              "hostPattern":"*kg.artsdata.ca/resource*"
             }
           ],
           "labelText":"Artsdata-entity"
@@ -56,7 +56,7 @@
           "runFunction": "artsdataPreview",
           "patterns": [
             {
-              "hostPattern":"*artsdata*"
+              "hostPattern":"*kg.artsdata.ca/resource*"
             }
           ],
           "labelText":"Artsdata-entity"
