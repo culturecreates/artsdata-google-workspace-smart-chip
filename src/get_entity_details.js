@@ -9,8 +9,8 @@ const getEntityDetails = url => {
   };
 
   try {
-    const url_https = url.replace('http://', 'https://');
-    const response = UrlFetchApp.fetch(url_https, options);
+    const urlHttps = url.replace('http://', 'https://');
+    const response = UrlFetchApp.fetch(urlHttps, options);
     return JSON.parse(response);
   } catch (error) {
     if (error.name === 'Exception') {
