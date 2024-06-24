@@ -10,15 +10,17 @@ const createPersonOrganizationCard = entityData => {
     .setTitle(entityName)
     .setSubtitle(entityType);
 
-  if (entityImage && entityImage != '') {
   const previewImage = CardService.newImage()
     .setAltText('Image of entity')
     .setImageUrl(entityImage);
-  }
 
-  const cardContent = CardService.newCardSection()
-    .addWidget(CardService.newTextParagraph().setText(disambiguatingDescription))
-    .addWidget(previewImage);
+  const cardContent = CardService.newCardSection().addWidget(
+    CardService.newTextParagraph().setText(disambiguatingDescription)
+  );
+
+  if (entityImage && entityImage !== '') {
+    cardContent.addWidget(previewImage);
+  }
 
   return CardService.newCardBuilder()
     .setHeader(previewHeader)

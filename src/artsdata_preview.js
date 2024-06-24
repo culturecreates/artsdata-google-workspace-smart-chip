@@ -21,7 +21,7 @@ const artsdataPreview = event => {
       case 'Place':
         return createLocationCard(entityData);
       default:
-        return createErrorCard('This type of entity is not supported.');
+        return createLocationCard(entityData);
     }
   }
   return null;
