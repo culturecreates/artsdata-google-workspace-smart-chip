@@ -1,0 +1,16 @@
+@base <http://example.com/base/> .
+@prefix schema: <http://schema.org/> .
+@prefix sheet: <http://g-sheet-artsdata/event/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sheet:0 a schema:Event;
+  schema:name """
+Test event - Mehdi Cayenne"""@fr;
+  schema:additionalType <https://kg.artsdata.ca/resource/Chanson>;
+  schema:startDate "2025-07-30T20:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://calendrier.gatineau.cloud/calendrier/evenement.aspx?langue=fr-ca&id_evenement=43426";
+  schema:description "Mehdi Cayenne, a veritable beast of the stage in the international French-speaking world, is back in force with an electrifying new show, featuring a more electro-pop sound tinged with hip-hop that leaves plenty of room for his legendary energy."@fr;
+  schema:location <https://kg.artsdata.ca/resource/K16-294>;
+  schema:organizer <https://kg.artsdata.ca/resource/K5-32>;
+  schema:performer <https://kg.artsdata.ca/resource/K2-5120>;
+  schema:image "https://calendrier.gatineau.cloud/calendrier/evenement.aspx?langue=fr-ca&id_evenement=43426" .
