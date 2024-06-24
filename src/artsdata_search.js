@@ -18,7 +18,7 @@ const artsdataSearch = () => {
 
       if (userChoice.getSelectedButton() === ui.Button.OK) {
         const chosenId = userChoice.getResponseText();
-        cell.setValue(`https://kg.artsdata.ca/resource/${chosenId}`);
+        cell.setValue(`http://kg.artsdata.ca/resource/${chosenId}`);
       } else {
         ui.alert('No ID chosen.');
       }
