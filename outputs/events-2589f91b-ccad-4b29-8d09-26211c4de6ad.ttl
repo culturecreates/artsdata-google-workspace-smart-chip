@@ -1,0 +1,157 @@
+@base <http://example.com/base/> .
+@prefix schema: <http://schema.org/> .
+@prefix sheet: <http://g-sheet-artsdata/event/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sheet:0 a schema:Event;
+  schema:name """
+Mehdi Cayenne"""@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/Chanson>;
+  schema:startDate "2024-07-30T20:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://calendrier.gatineau.cloud/calendrier/evenement.aspx?langue=fr-ca&id_evenement=43426";
+  schema:description "Mehdi Cayenne, a veritable beast of the stage in the international French-speaking world, is back in force with an electrifying new show, featuring a more electro-pop sound tinged with hip-hop that leaves plenty of room for his legendary energy."@fr;
+  schema:location <http://kg.artsdata.ca/resource/K16-294>;
+  schema:organizer <http://kg.artsdata.ca/resource/K5-32>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5120>;
+  schema:image "https://calendrier.gatineau.cloud/calendrier/evenement.aspx?langue=fr-ca&id_evenement=43426" .
+
+sheet:1 a schema:Event;
+  schema:name """
+Mehdi Cayenne"""@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/Chanson>;
+  schema:startDate "2024-07-31T20:00:00-04:00"^^xsd:dateTime;
+  schema:description "Mehdi Cayenne, a veritable beast of the stage in the international French-speaking world, is back in force with an electrifying new show, featuring a more electro-pop sound tinged with hip-hop that leaves plenty of room for his legendary energy."@fr;
+  schema:location <http://kg.artsdata.ca/resource/K11-26>;
+  schema:organizer <http://kg.artsdata.ca/resource/K5-32>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5120> .
+
+sheet:2 a schema:Event;
+  schema:name "The 15th Anniversary Rubaboo Opening Reception"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent>;
+  schema:startDate "2024-07-19T20:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "join us as we celebrate our 15 th anniversary in style, with artists Michelle Thrush and Cikwes"@fr;
+  schema:location <https://www.wikidata.org/wiki/Q41796638>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5013>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:3 a schema:Event;
+  schema:name "Silly Billy"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/DancePerformance>;
+  schema:startDate "2024-07-19T18:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "from choreographers Arik Pipestem and Amy Hampton, a family-friendly story about a rare white buffalo, unhappy with his uniqueness, who goes on a quest to find the magical Unicorn, named Silly Our"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5150>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:4 a schema:Event;
+  schema:name "Silly Billy"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/DancePerformance>;
+  schema:startDate "2024-07-20T13:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "from choreographers Arik Pipestem and Amy Hampton, a family-friendly story about a rare white buffalo, unhappy with his uniqueness, who goes on a quest to find the magical Unicorn, named Silly Our"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5150>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:5 a schema:Event;
+  schema:name "Silly Billy"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/DancePerformance>;
+  schema:startDate "2024-07-21T14:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "from choreographers Arik Pipestem and Amy Hampton, a family-friendly story about a rare white buffalo, unhappy with his uniqueness, who goes on a quest to find the magical Unicorn, named Silly Our"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5150>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:6 a schema:Event;
+  schema:name "Silly Billy"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/DancePerformance>;
+  schema:startDate "2024-07-21T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "from choreographers Arik Pipestem and Amy Hampton, a family-friendly story about a rare white buffalo, unhappy with his uniqueness, who goes on a quest to find the magical Unicorn, named Silly Our"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5150>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:7 a schema:Event;
+  schema:name "Our Young Ancestors: A Fusion Experience"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/PerformingArtsEvent>;
+  schema:startDate "2024-07-20T20:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "our signature Rubaboo event, infused with love, that honours some of our incredible young ancestors: the late Troy Emery Twigg, Taran J. Kootenhayoo and Bishop Pipestem"@fr;
+  schema:location <https://www.wikidata.org/wiki/Q41796638>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <N/A>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:8 a schema:Event;
+  schema:name "Amik Tales"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/TheatrePerformance>;
+  schema:startDate "2024-07-24T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "a new play by storyteller and playwright Josh Languedoc that unpacks the oral stories of Amik and his journey to become the next best dam builder"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K3-245>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:9 a schema:Event;
+  schema:name "Rubaboo Side Dishes"@fr;
+  schema:startDate "2024-07-25T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "enticing panels and workshops designed for Indigenous artists and creatives"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <N/A>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:10 a schema:Event;
+  schema:name "Talk Treaty to Me"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/TheatrePerformance>;
+  schema:startDate "2024-07-26T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "a collaborative theatre project from Teresa Cutknife and Samantha Fraughton, that explores Treaty 6 relationships through the different perspectives of Canadian and Indigenous law"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5084>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:11 a schema:Event;
+  schema:name "Talk Treaty to Me"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/TheatrePerformance>;
+  schema:startDate "2024-07-27T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "a collaborative theatre project from Teresa Cutknife and Samantha Fraughton, that explores Treaty 6 relationships through the different perspectives of Canadian and Indigenous law"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5084>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:12 a schema:Event;
+  schema:name "Talk Treaty to Me"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/TheatrePerformance>;
+  schema:startDate "2024-07-28T19:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "a collaborative theatre project from Teresa Cutknife and Samantha Fraughton, that explores Treaty 6 relationships through the different perspectives of Canadian and Indigenous law"@fr;
+  schema:location <http://kg.artsdata.ca/resource/K2-5149>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <http://kg.artsdata.ca/resource/K2-5084>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
+
+sheet:13 a schema:Event;
+  schema:name "You Are Loved Dance Party"@fr;
+  schema:additionalType <http://kg.artsdata.ca/resource/SocialEvent>;
+  schema:startDate "2024-07-26T21:00:00-04:00"^^xsd:dateTime;
+  schema:url "https://dreamspeakers.org/raf-2024";
+  schema:description "embodying the theme of our festival, we’ll dance to the vibration of love, in celebration of who we are"@fr;
+  schema:location <https://www.wikidata.org/wiki/Q41796638>;
+  schema:organizer <http://kg.artsdata.ca/resource/K2-282>;
+  schema:performer <N/A>;
+  schema:image "https://dreamspeakers.org/raf-2024" .
