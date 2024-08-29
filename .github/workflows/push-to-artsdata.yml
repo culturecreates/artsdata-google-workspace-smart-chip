@@ -13,6 +13,11 @@ on:
         type: string
         required: true
         default: 'test-events'
+      prefix:
+        description: 'Prefix'
+        type: string
+        required: true
+        default: 'http://test-events/'
     
 jobs:
   download-and-transform-data:
@@ -44,6 +49,11 @@ jobs:
         run: |
             curl 'https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/ontorefine/sheet-configuration.json' >> event-transform-config.json
     
+      - name: Set prefix in RDF mapping
+        id: step-4-set-sheet-prefix
+        run: |
+            sed -i "s|http://google-sheet/|${{inputs.prefix}}|g" event-transform-config.json
+            
       - name: Set output file name
         id: step-5
         run: |
