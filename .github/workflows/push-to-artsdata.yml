@@ -2,6 +2,17 @@ name: Import Google Sheet to Artsdata
 
 on:
   workflow_dispatch:
+    inputs:
+      spreadsheet_url:
+        description: 'Google Spreadsheet /export?exportFormat=csv'
+        type: string
+        required: true
+        default: 'https://docs.google.com/spreadsheets/d/1fPcWbdSL-gcLmeGWVCID9TjBq5fGk4vG4HG2E7kSAb0/export?exportFormat=csv'
+      artifact:
+        description: 'Artifact'
+        type: string
+        required: true
+        default: 'test-events'
     
 jobs:
   download-and-transform-data:
@@ -25,7 +36,7 @@ jobs:
       - name: Download data from Google Sheet
         id: step-3
         run: |
-            curl -L 'https://docs.google.com/spreadsheets/d/1fPcWbdSL-gcLmeGWVCID9TjBq5fGk4vG4HG2E7kSAb0/export?exportFormat=csv' -o events.csv
+            curl -L ${{inputs.spreadsheet_url}} -o events.csv
 
 
       - name: Download configuration files for transformation
@@ -94,7 +105,7 @@ jobs:
       - name: Action setup
         uses: culturecreates/artsdata-pipeline-action@v1.1.0
         with:
-          artifact: test-events
+          artifact: ${{inputs.artifact}}
           group: google-sheet
           publisher: "${{ secrets.PUBLISHER_URI_GREGORY }}"
           downloadUrl: https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
