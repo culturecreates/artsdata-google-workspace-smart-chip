@@ -16,7 +16,7 @@
       "includeArchiveFileName": false,
       "trimStrings": false,
       "disableAutoPreview": false,
-      "projectName": "cli-transform-my_sheet.csv-2024-06-23",
+      "projectName": "cli-transform-my_sheet.csv-2024-08-29",
       "projectTags": [],
       "fileSource": "my_sheet.csv",
       "archiveFileName": null
@@ -131,7 +131,7 @@
                     },
                     "transformation": {
                       "language": "grel",
-                      "expression": "cells[\"StartDate\"].value + \"T\" + cells[\"StartTime\"].value + \"-04:00\""
+                      "expression": "cells[\"StartDate\"].value + \"T\" + cells[\"StartTime\"].value"
                     },
                     "valueType": {
                       "type": "datatype_literal",
