@@ -18,6 +18,10 @@ on:
         type: string
         required: true
         default: 'http://test-events/'
+      publisher:
+        description: 'Publisher ID'
+        type: string
+        required: true
     
 jobs:
   download-and-transform-data:
@@ -117,7 +121,7 @@ jobs:
         with:
           artifact: ${{inputs.artifact}}
           group: google-sheet
-          publisher: "${{ secrets.PUBLISHER_URI_GREGORY }}"
+          publisher: "${{inputs.publisher}}"
           downloadUrl: https://raw.githubusercontent.com/culturecreates/artsdata-google-workspace-smart-chip/main/outputs/${{needs.download-and-transform-data.outputs.output-file-path}}
 
 
