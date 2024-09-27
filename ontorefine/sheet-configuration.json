@@ -16,13 +16,26 @@
       "includeArchiveFileName": false,
       "trimStrings": false,
       "disableAutoPreview": false,
-      "projectName": "cli-transform-my_sheet.csv-2024-08-29",
+      "projectName": "cli-transform-my_sheet.csv-2024-09-27",
       "projectTags": [],
       "fileSource": "my_sheet.csv",
       "archiveFileName": null
     }
   ],
   "operations": [
+    {
+      "op": "core/column-addition",
+      "engineConfig": {
+        "facets": [],
+        "mode": "row-based"
+      },
+      "baseColumnName": "Title",
+      "expression": "jython:import uuid\nreturn 'temporary/' + str(uuid.uuid4()).replace('-', '')",
+      "onError": "set-to-blank",
+      "newColumnName": "UUID",
+      "columnInsertIndex": 1,
+      "description": "Create column UUID at index 1 based on column Title using expression jython:import uuid\nreturn 'temporary/' + str(uuid.uuid4()).replace('-', '')"
+    },
     {
       "op": "mapping-editor/save-rdf-mapping",
       "mapping": {
@@ -36,7 +49,8 @@
           {
             "subject": {
               "valueSource": {
-                "source": "row_index"
+                "source": "column",
+                "columnName": "UUID"
               },
               "transformation": {
                 "language": "prefix",
@@ -74,13 +88,7 @@
                       "columnName": "Title"
                     },
                     "valueType": {
-                      "type": "language_literal",
-                      "language": {
-                        "valueSource": {
-                          "source": "constant",
-                          "constant": "fr"
-                        }
-                      }
+                      "type": "literal"
                     }
                   }
                 ]
@@ -168,35 +176,6 @@
                     },
                     "valueType": {
                       "type": "literal"
-                    }
-                  }
-                ]
-              },
-              {
-                "property": {
-                  "valueSource": {
-                    "source": "constant",
-                    "constant": "description"
-                  },
-                  "transformation": {
-                    "language": "prefix",
-                    "expression": "schema"
-                  }
-                },
-                "values": [
-                  {
-                    "valueSource": {
-                      "source": "column",
-                      "columnName": "Description"
-                    },
-                    "valueType": {
-                      "type": "language_literal",
-                      "language": {
-                        "valueSource": {
-                          "source": "constant",
-                          "constant": "fr"
-                        }
-                      }
                     }
                   }
                 ]
@@ -301,6 +280,29 @@
                     "valueSource": {
                       "source": "column",
                       "columnName": "Url"
+                    },
+                    "valueType": {
+                      "type": "literal"
+                    }
+                  }
+                ]
+              },
+              {
+                "property": {
+                  "valueSource": {
+                    "source": "constant",
+                    "constant": "description"
+                  },
+                  "transformation": {
+                    "language": "prefix",
+                    "expression": "schema"
+                  }
+                },
+                "values": [
+                  {
+                    "valueSource": {
+                      "source": "column",
+                      "columnName": "Description"
                     },
                     "valueType": {
                       "type": "literal"
