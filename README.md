@@ -13,3 +13,7 @@ https://docs.google.com/spreadsheets/d/1fPcWbdSL-gcLmeGWVCID9TjBq5fGk4vG4HG2E7kS
 
 To reload this sheet use Nebula and view the artifact here:
 https://kg.artsdata.ca/entity?uri=http%3A%2F%2Fkg.artsdata.ca%2Fdatabus%2Fculture-creates%2Fgoogle-sheet%2Ftest-events
+
+# Notes
+
+* The Artsdata reconciliation feature previously included in this project was deprecated and officially removed as of November 28, 2024.
