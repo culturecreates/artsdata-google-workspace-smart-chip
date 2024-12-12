@@ -14,9 +14,9 @@
       "storeBlankCellsAsNulls": true,
       "includeFileSources": false,
       "includeArchiveFileName": false,
-      "trimStrings": false,
+      "trimStrings": true,
       "disableAutoPreview": false,
-      "projectName": "cli-transform-my_sheet.csv-2024-09-27",
+      "projectName": "cli-transform-my_sheet.csv-2024-12-12",
       "projectTags": [],
       "fileSource": "my_sheet.csv",
       "archiveFileName": null
@@ -174,8 +174,13 @@
                       "source": "column",
                       "columnName": "Url"
                     },
+                    "transformation": {
+                      "language": "raw"
+                    },
                     "valueType": {
-                      "type": "literal"
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
                     }
                   }
                 ]
@@ -279,10 +284,15 @@
                   {
                     "valueSource": {
                       "source": "column",
-                      "columnName": "Url"
+                      "columnName": "Image"
+                    },
+                    "transformation": {
+                      "language": "raw"
                     },
                     "valueType": {
-                      "type": "literal"
+                      "type": "iri",
+                      "typeMappings": [],
+                      "propertyMappings": []
                     }
                   }
                 ]
