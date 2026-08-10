@@ -78,7 +78,7 @@ jobs:
             -f csv >> ${{steps.step-5.outputs.events_file_name}}
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
             name: events
             path: ./${{steps.step-5.outputs.events_file_name}}
@@ -89,11 +89,11 @@ jobs:
     needs: download-and-transform-data
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download artifacts
         id: download-step
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: events
           path: ./events
@@ -117,7 +117,7 @@ jobs:
     needs: [commit-to-github, download-and-transform-data]
     steps:
       - name: Action setup
-        uses: culturecreates/artsdata-pipeline-action@v1.1.0
+        uses: culturecreates/artsdata-pipeline-action@v4
         with:
           artifact: ${{inputs.artifact}}
           group: google-sheet
